@@ -1,6 +1,6 @@
 package Seminar_2;
 
-public class Duck extends Animal implements Runable, Flyable{
+public class Duck extends Animal implements Runable, Flyable, Swimable{
 
     public Duck(String name, int box) {
         super(name, box);
@@ -21,5 +21,9 @@ public class Duck extends Animal implements Runable, Flyable{
         return 10;
     }
 
+    @Override
+    public int speedOfSwim() {
+        return 20;
+    }
     
 }

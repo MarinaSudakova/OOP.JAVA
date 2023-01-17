@@ -60,4 +60,27 @@ public class Zoo {
         return animals;
     }
 
+    public List<Swimable> getSwimer () {
+        List<Swimable> result = new ArrayList<Swimable>();
+        for (Animal an : animals) {
+            if (an instanceof Swimable) {
+                result.add((Swimable)an);
+            }
+        }
+        return result;
+
+    }
+
+    public int getChampionOfSwimers () {
+        int max = 0;
+        // Animal winner;
+        for (Swimable swimer : getSwimer()) {
+            if (max < swimer.speedOfSwim()) {
+                max = swimer.speedOfSwim();
+                // winner = (Animal)swimer;
+            }
+        }
+        // System.out.println((Animal)winner);
+        return max;
+    }
 }
