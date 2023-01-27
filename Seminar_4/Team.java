@@ -1,5 +1,6 @@
 package Seminar_4;
 
+import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -26,7 +27,25 @@ public class Team<E extends Warrior> implements Iterable<E> {
                 }
             }
         };
+        System.out.println("Max team range is : ");
         return maxRange;
     }
-
+    
+    public int maxTeamSafe() {
+        int maxSave = 0;
+        for (E item : team) {
+            if (item instanceof Archer) {
+                if (((Archer)item).getCountUpForHealth() > maxSave) {
+                    maxSave = ((Archer)item).getCountUpForHealth();
+                }
+            }
+            else if (item instanceof Swordman){
+                if (((Swordman)item).getCountUpForHealth() > maxSave) {
+                    maxSave = ((Swordman)item).getCountUpForHealth();
+                }
+            }
+        };
+        System.out.println("Max team range is : ");
+        return maxSave;
+    }
 }

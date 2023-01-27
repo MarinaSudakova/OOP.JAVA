@@ -1,11 +1,17 @@
 package Seminar_4;
+import Seminar_4.Shields.SquareShield;
 import Seminar_4.Weapons.Bow;
 
 // лучник
 public class Archer extends Warrior{
 
-    public Archer(String name, int healthPoint, Bow bow) {
-        super(name, healthPoint, bow);
+    /**
+     * @param name
+     * @param healthPoint
+     * @param bow
+     */
+    public Archer(String name, int healthPoint, Bow bow, SquareShield shield) {
+        super(name, healthPoint, bow, shield);
     }
 
     @Override
@@ -17,4 +23,7 @@ public class Archer extends Warrior{
         return ((Bow) getWeapon()).getRange();
     }
     
+    public int getCountUpForHealth(){
+        return ((SquareShield) getShield()).getCountUpForHealth();
+    }
 }
