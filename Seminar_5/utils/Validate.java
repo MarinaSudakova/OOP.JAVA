@@ -9,4 +9,11 @@ public class Validate {
             throw new PhoneException("Длина телефона должна быть 11");
         }
     }
+
+    public void checkName(String name) throws Exception {
+        if(name.equals("")) {
+            throw new NameException("Пустая строка. Попробуйте еще раз");
+        }
+    }
+
 }

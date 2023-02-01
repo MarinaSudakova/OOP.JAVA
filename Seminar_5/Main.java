@@ -14,7 +14,7 @@ public class Main {
         FileOperation fileOperation = new FileOperationImpl("users.txt");
         Repository repository = new RepositoryFile(fileOperation);
         Validate validate = new Validate();
-        UserController controller = new UserController(repository,validate);
+        UserController controller = new UserController(repository, validate);
         ViewUser view = new ViewUser(controller, validate);
         view.run();
     }
